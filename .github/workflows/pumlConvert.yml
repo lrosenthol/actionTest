@@ -24,9 +24,9 @@ jobs:
     - name: make output dir
       run: mkdir -p output
     - name: Process diagrams
-      uses: Timmy/plantuml-action@v1
+      uses: cloudbees/plantuml-github-action@master
       with:
-        args: '-tpng -o output $UML_FILES'
+        args: -tpng -o output $UML_FILES
     - name: Push Local Changes
       uses:  stefanzweifel/git-auto-commit-action@v4.1.2 
       with: 
