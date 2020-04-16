@@ -7,16 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Changed Files Exporter
-      uses: futuratrepadeira/changed-files@v3.1.0
-      with:
-        repo-token: ${{ github.token }}
-        pattern: '^.*\.(doc|docx)$'
+    - id: file_changes
+      uses: trilom/file-changes-action@v1.2.3
 
     - name: output
       run: |
-        echo 'Updated: ${{ steps.convert_via_pandoc.outputs.files_updated}}'
-        echo 'Added: ${{ steps.convert_via_pandoc.outputs.files_created}}'
-        echo 'Deleted: ${{ steps.convert_via_pandoc.outputs.files_deleted}}'
+        echo 'Modified: ${{ steps.file_changes.outputs.files_modified}}'
+        echo 'Added: ${{ steps.file_changes.outputs.files_added}}'
+        echo 'Deleted: ${{ steps.file_changes.outputs.files_removed}}'
 
       # use core for regular stuff and latex for PDF
       # - uses: docker://pandoc/core:2.9
