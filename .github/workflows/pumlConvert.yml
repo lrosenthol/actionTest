@@ -34,4 +34,3 @@ jobs:
           commit_user_email: "leonardr@lazerware.com"
           commit_author: "Leonard Rosenthol <actions@github.com>"
           commit_message: "Generate SVG and PNG images for PlantUML diagrams" 
-          branch: ${{ github.ref }}
