@@ -1,6 +1,11 @@
 # bare minimal
 name: Word2MD
-on: push
+on: 
+  push:
+    paths:
+      - '**/*.doc'
+      - '**/*.docx'
+  
 
 jobs:
   convert_via_pandoc:
@@ -9,6 +14,8 @@ jobs:
     - name: Changed Files Exporter
       id: file_changes
       uses: trilom/file-changes-action@v1.2.3
+      with:
+        output: ' '
 
     - name: output
       run: |
