@@ -1,5 +1,5 @@
 # bare minimal
-name: changes
+name: Report Changes
 on: push
 jobs:
   changes:
