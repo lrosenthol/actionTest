@@ -15,7 +15,7 @@ jobs:
     - name: Checkout Source 
       uses: actions/checkout@v2
       with:
-        ref: ${{ github.head_ref }}
+        ref: ${{ github.ref }}
     - name: Get changed UML files
       id: getfile
       run: |
@@ -36,4 +36,4 @@ jobs:
           commit_user_email: "leonardr@lazerware.com"
           commit_author: "Leonard Rosenthol <actions@github.com>"
           commit_message: "Generate SVG and PNG images for PlantUML diagrams" 
-          branch: ${{ github.head_ref }}
+          branch: ${{ github.ref }}
