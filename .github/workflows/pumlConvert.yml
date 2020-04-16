@@ -10,7 +10,7 @@ jobs:
     name: convert diagrams
     runs-on: ubuntu-latest
     env:
-        UML_FILES: ".puml"
+        UML_FILES: ".puml$"
     steps:
     - name: Checkout Source 
       uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
     - name: Get changed UML files
       id: getfile
       run: |
-        echo "::set-output name=files::$(git diff-tree -r --no-commit-id --name-only ${{ github.sha }} | tr " " "\n" | grep ${{ env.UML_FILES }} )"
+        echo "::set-output name=files::$(git diff-tree -r --no-commit-id --name-only ${{ github.sha }} | tr " " "\n" | grep ${{ env.UML_FILES }} | xargs)"
     - name: UML files considered echo output
       run: |
         echo ${{ steps.getfile.outputs.files }}
