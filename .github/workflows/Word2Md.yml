@@ -1,0 +1,29 @@
+# bare minimal
+name: Word2MD
+on: push
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Changed Files Exporter
+      uses: futuratrepadeira/changed-files@v3.1.0
+      with:
+        repo-token: ${{ github.token }}
+        pattern: '^.*\.(doc|docx)$'
+
+    - name: output
+      run: |
+        echo 'Updated: ${{ steps.convert_via_pandoc.outputs.files_updated}}'
+        echo 'Added: ${{ steps.convert_via_pandoc.outputs.files_created}}'
+        echo 'Deleted: ${{ steps.convert_via_pandoc.outputs.files_deleted}}'
+
+      # use core for regular stuff and latex for PDF
+      # - uses: docker://pandoc/core:2.9
+      #   with:
+      #     args: --output=output/result.pdf ${{ env.FILELIST }}
+      # - uses: actions/upload-artifact@master
+      #   with:
+      #     name: output
+      #     path: output
+  
