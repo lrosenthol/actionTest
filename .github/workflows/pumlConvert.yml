@@ -19,7 +19,7 @@ jobs:
     - name: Get changed UML files
       id: getfile
       run: |
-        echo "::set-output name=files::$(git diff-tree -r --no-commit-id --name-only ${{ github.sha }} | tr " " "\n" | grep ${{ env.UML_FILES }})"
+        echo "::set-output name=files::$(git diff-tree -r --no-commit-id --name-only ${{ github.sha }} | tr " " "\n" | grep ${{ env.UML_FILES }} )"
     - name: UML files considered echo output
       run: |
         echo ${{ steps.getfile.outputs.files }}
