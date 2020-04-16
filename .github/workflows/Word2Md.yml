@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Changed Files Exporter
-    - id: file_changes
+      id: file_changes
       uses: trilom/file-changes-action@v1.2.3
 
     - name: output
