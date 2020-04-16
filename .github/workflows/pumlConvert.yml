@@ -1,4 +1,4 @@
-name: Word2MD
+name: PlantUML
 on: 
   push:
     paths:
@@ -9,6 +9,8 @@ jobs:
   diagrams:
     name: convert diagrams
     runs-on: ubuntu-latest
+    env:
+        UML_FILES: ".puml"
     steps:
     - name: Checkout Source 
       uses: actions/checkout@v1
