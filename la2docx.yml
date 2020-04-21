@@ -1,0 +1,18 @@
+from: latex
+to: docx
+
+reference-doc: reference.docx
+
+table-of-contents: true
+toc-depth: 2
+
+metadata:
+  author: Leonard Rosenthol
+  date: April 16, 2020
+  # abstract: '`<w:p><w:r><w:br w:type="page"/></w:r></w:p>`{=openxml}'
+  # that hack above forces a page break in "raw" OOXML
+	  
+# Note that these take files, not their contents:
+include-before-body: ["ISO-prefix.docx"]
+include-after-body: []
+include-in-header: []

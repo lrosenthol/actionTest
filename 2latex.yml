@@ -1,0 +1,12 @@
+from: markdown-latex_macros
+to: latex
+
+table-of-contents: true
+toc-depth: 2
+
+standalone: true
+
+metadata:
+  title: Markdown Conversion Test
+  author: Leonard Rosenthol
+  date: April 16, 2020

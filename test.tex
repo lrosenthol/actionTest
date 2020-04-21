@@ -1,0 +1,281 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Markdown Conversion Test},
+  pdfauthor={Leonard Rosenthol},
+  colorlinks=true,
+  linkcolor=Maroon,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=blue,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{Draft Prepared: 15 August 2018}
+\rfoot{Page \thepage}
+
+\title{Markdown Conversion Test}
+\author{Leonard Rosenthol}
+\date{April 16, 2020}
+
+\begin{document}
+\maketitle
+
+\newpage{} \toc
+
+\hypertarget{pandoc-test-doc}{%
+\section{Pandoc Test Doc}\label{pandoc-test-doc}}
+
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
+
+As described in the \href{Glossary.md}{Glossary}, a claim is ``A
+JSON-formatted data structure representing the assertions of fact by an
+\emph{actor} concerning an \emph{asset} at a specific time and for a
+specific reason''. \emph{Claims} in the CAI ecosystem are equivalent to
+(and compatible with) a \href{https://www.w3.org/TR/vc-data-model/}{W3C
+Verifiable Credential}, however since our claims aren't about people we
+don't use the term credential.
+
+\hypertarget{technologies}{%
+\subsection{Technologies}\label{technologies}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://tools.ietf.org/html/rfc8259}{JSON}
+\item
+  \href{https://www.w3.org/TR/json-ld11/}{JSON-LD}
+\item
+  \href{https://tools.ietf.org/html/rfc7515}{JSON Web Signatures} (JWS)
+\item
+  \href{https://tools.ietf.org/html/rfc7797}{JSON Web Signature
+  Unencoded Payload Option} (JWS-UPO)
+\item
+  \href{https://tools.ietf.org/html/rfc7519}{JSON Web Token} (JWT)
+\item
+  \href{https://www.w3.org/TR/vc-data-model/}{Verifiable Credentials}
+  (VC)
+\item
+  \href{https://www.adobe.com/products/xmp.html}{eXtensible Metadata
+  Platform} (XMP)
+\end{itemize}
+
+\hypertarget{xmp}{%
+\subsection{XMP}\label{xmp}}
+
+Every asset, for which a claim is being made, shall contain embedded
+XMP. If the asset does not contain XMP at the time a claim is made, the
+\emph{claims recorder} shall create it prior to signing the claim. The
+\href{https://github.com/adobe/XMP-Toolkit-SDK/}{Adobe XMP Toolkit SDK}
+can be used to create and modify XMP in
+\href{https://github.com/adobe/XMP-Toolkit-SDK/tree/master/XMPFiles/source/FileHandlers}{various
+asset types}.
+
+As defined in the \href{https://www.iso.org/standard/75163.html}{ISO
+16684-1 standard}, the XML+RDF serialization of the metadata shall be
+uncompressed and can be located starting with the bytes
+\texttt{\textless{}?xpacket\ begin=} and ending with the bytes
+\texttt{\textless{}?xpacket\ end="w"?\textgreater{}}.
+
+\hypertarget{claim-internals}{%
+\subsection{Claim Internals}\label{claim-internals}}
+
+\hypertarget{jwt-claim-set}{%
+\subsubsection{JWT Claim Set}\label{jwt-claim-set}}
+
+A claim is defined as a standard JWT claim set
+(https://tools.ietf.org/html/rfc7519\#section-4) that also follows the
+requirements for a \emph{VC} (6.3.1 of the VC spec) with CAI as the
+\emph{\texttt{@context}} and \emph{credentialSubject}. Claims can either
+be signed or unsigned. An unsigned claim may contain any values
+(\emph{for now}), though it is RECOMMENDED to include the \emph{actions}
+that preceded this claim.
+
+\textbf{Example Claim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+    \DataTypeTok{"jti"}\FunctionTok{:} \StringTok{"3e061079a991071a5d2dcfd2ee1c6794"}\FunctionTok{,}
+    \DataTypeTok{"iss"}\FunctionTok{:} \StringTok{"http://cai.adobe.com"}\FunctionTok{,}
+    \DataTypeTok{"iat"}\FunctionTok{:} \DecValTok{1516239022}\FunctionTok{,}
+    \DataTypeTok{"vc"} \FunctionTok{:} \FunctionTok{\{}
+        \DataTypeTok{"@context"}\FunctionTok{:} \OtherTok{[}
+            \StringTok{"https://www.w3.org/2018/credentials/v1"}\OtherTok{,}
+            \StringTok{"https://ns.adobe.com/cai"}
+        \OtherTok{]}\FunctionTok{,}
+            \DataTypeTok{"type"}\FunctionTok{:} \OtherTok{[}\StringTok{"VerifiableCredential"}\OtherTok{,} \StringTok{"AuthenticContent"}\OtherTok{]}\FunctionTok{,}
+            \DataTypeTok{"credentialSubject"}\FunctionTok{:} \FunctionTok{\{}
+            \DataTypeTok{"actions"}\FunctionTok{:} \OtherTok{[} \FunctionTok{\{} \DataTypeTok{"stEvt:action"}\FunctionTok{:} \StringTok{"filter\_applied"}\FunctionTok{,} \DataTypeTok{"stEvt:when"}\FunctionTok{:} \StringTok{"2020{-}02{-}11T09:00:00"} \FunctionTok{\}} \OtherTok{]}\FunctionTok{,}
+            \DataTypeTok{"signature"} \FunctionTok{:} \StringTok{"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..t3VhQ7QsILDuV\_HNFSMI{-}Fb2FoT7fuzalpS5AH8A9c0"}\FunctionTok{,}
+            \DataTypeTok{"url"}\FunctionTok{:} \StringTok{"https://cai\_resolver.adobe.com/A1B2C3D4E5"}\FunctionTok{,}
+            \DataTypeTok{"parent\_url"}\FunctionTok{:} \StringTok{"https://cai\_resolver.adobe.com/123456789123456789000"}
+        \FunctionTok{\}}
+    \FunctionTok{\}}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+The JWT claim set shall include: - \emph{jti} - a unique identifier for
+the JWT. (NOTE: as per VC, this is equivalent to the VC \texttt{id}
+property) - \emph{iss} - identifies the actor that issued the JWT as a
+case-sensitive string containing a StringOrURI. (NOTE: as per VC, this
+is equivalent to the VC \texttt{issuer} property) - \emph{iat} -
+identifies the time at which the JWT was issued. Its value MUST be a
+number expressing a NumericDate - \emph{vc} - this is the verifiable
+credential itself, which is a valid JSON-LD object including \emph{type}
+and \emph{credentialSubject}.
+
+\hypertarget{adobes-view-of-did}{%
+\subsection{Adobe's view of DID}\label{adobes-view-of-did}}
+
+\hypertarget{overview}{%
+\subsubsection{Overview}\label{overview}}
+
+The W3C specification for DID defines them as:
+
+\begin{quote}
+Decentralized identifiers (DIDs) are a new type of identifier to provide
+verifiable, decentralized digital identity. These new identifiers are
+designed to enable the controller of a DID to prove control over it and
+to be implemented independently of any centralized registry, identity
+provider, or certificate authority.
+\end{quote}
+
+\hypertarget{command-line-parameters}{%
+\subsection{Command Line Parameters}\label{command-line-parameters}}
+
+\hypertarget{standard-parameters}{%
+\subsubsection{Standard Parameters}\label{standard-parameters}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.47\columnwidth}\raggedright
+Param\strut
+\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+Description\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{-h}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+print help information\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{-\/-help}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+print help information\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{-o\ {[}FILE\textbar{}DIR{]}}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+The explicit filename to save to OR a directory where logically named
+output will be placed\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{-\/-log\ {[}FILE{]}}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+Instead of logging to stdout, write to a specified file instead\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{-\/-pages}\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+range/list of pages to be processed (eg. 1-5, 2,4,7). NOTE: page range
+is normally one-based unless --zero is also used, then it's
+zero-based\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{document}

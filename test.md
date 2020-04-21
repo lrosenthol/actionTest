@@ -1,4 +1,33 @@
-# Claims
+::: {custom-style="DocTitle"}
+Document Management - TESTING
+:::
+
+::: {custom-style="Box"}
+CD stage
+:::
+ 
+
+:::  {custom-style="Box"}
+**Warning for WDs and CDs**
+
+This document is not an ISO International Standard. It is distributed for review and comment. It is subject to change without notice and may not be referred to as an International Standard.
+
+Recipients of this draft are invited to submit, with their comments, notification of any relevant patent rights of which they are aware and to provide supporting documentation.
+:::
+
+\newpage
+
+::: {.toc}
+:::
+
+\newpage
+
+
+# Pandoc Test Doc
+
+::: {.comment}
+This text is a comment
+:::
 
 ## Introduction
 As described in the [Glossary](Glossary.md), a claim is "A JSON-formatted data structure representing the assertions of fact by an _actor_ concerning an _asset_ at a specific time and for a specific reason". _Claims_ in the CAI ecosystem are equivalent to (and compatible with) a [W3C Verifiable Credential](https://www.w3.org/TR/vc-data-model/), however since our claims aren't about people we don't use the term credential.
@@ -18,10 +47,9 @@ Every asset, for which a claim is being made, shall contain embedded XMP. If the
 
 As defined in the [ISO 16684-1 standard](https://www.iso.org/standard/75163.html), the XML+RDF serialization of the metadata shall be uncompressed and can be located starting with the bytes `<?xpacket begin=` and ending with the bytes `<?xpacket end="w"?>`. 
 
-
 ## Claim Internals
 ### JWT Claim Set
-A claim is defined as a standard JWT claim set (https://tools.ietf.org/html/rfc7519#section-4) that also follows the requirements for a _VC_ (6.3.1 of the VC spec) with CAI as the _@context_ and _credentialSubject_.  Claims can either be signed or unsigned. An unsigned claim may contain any values (_for now_), though it is RECOMMENDED to include the _actions_ that preceded this claim.
+A claim is defined as a standard JWT claim set (https://tools.ietf.org/html/rfc7519#section-4) that also follows the requirements for a _VC_ (6.3.1 of the VC spec) with CAI as the _`@context`_ and _credentialSubject_.  Claims can either be signed or unsigned. An unsigned claim may contain any values (_for now_), though it is RECOMMENDED to include the _actions_ that preceded this claim.
 
 **Example Claim**
 ```json
@@ -65,3 +93,18 @@ The W3C specification for DID defines them as:
 | `-o [FILE|DIR]` |	The explicit filename to save to OR a directory where logically named output will be placed |
 | `--log [FILE]` |	Instead of logging to stdout, write to a specified file instead |
 | `--pages` | range/list of pages to be processed (eg. 1-5, 2,4,7). NOTE: page range is normally one-based unless --zero is also used, then it's zero-based |
+
+Inline Elements
+===============
+Normal [highlighted]{.highlight} [commented]{.comment}.[Marginal note
+[highlighted]{.highlight}.]{.margin} [Fixme text
+[highlighted]{.highlight} [and commented]{.comment} and normal
+fixme.]{.fixme} And [Text In Small Caps]{.smcaps}.
+
+::: {.comment}
+Commented text.[Margin note with *emphasis* and [highlighted
+text]{.highlight}. Normal margin.]{.margin} This is [highlighted and
+*italic*]{.highlight} text. But now should be back to commented text.
+:::
+
+And now back to normal once again.

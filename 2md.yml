@@ -1,0 +1,16 @@
+from: markdown+emoji
+to: markdown+emoji
+
+template: template.md
+
+table-of-contents: true
+toc-depth: 2
+
+metadata:
+  author: Leonard Rosenthol
+  date: April 16, 2020
+	  
+# Note that these take files, not their contents:
+include-before-body: ["ISO-prefix.md"]
+include-after-body: []
+include-in-header: []
