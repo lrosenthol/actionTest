@@ -2,17 +2,41 @@
 Document Management - TESTING
 :::
 
-::: {custom-style="Box"}
-CD stage
+::: {custom-style="CenterBox"}
+[CD stage]{custom-style="ISOStage"}
 :::
  
 
-:::  {custom-style="Box"}
+:::  {custom-style="CenterBox"}
 **Warning for WDs and CDs**
+:::
 
+:::  {custom-style="Box"}
 This document is not an ISO International Standard. It is distributed for review and comment. It is subject to change without notice and may not be referred to as an International Standard.
 
 Recipients of this draft are invited to submit, with their comments, notification of any relevant patent rights of which they are aware and to provide supporting documentation.
+:::
+
+\newpage
+
+:::  {custom-style="Box"}
+© ISO 2020
+
+All rights reserved. Unless otherwise specified, or required in the context of its implementation, no part of this publication may be reproduced or utilized otherwise in any form or by any means, electronic or mechanical, including photocopying, or posting on the internet or an intranet, without prior written permission. Permission can be requested from either ISO at the address below or ISO’s member body in the country of the requester.
+:::
+
+:::  {custom-style="ISOCopyrightBox"}
+ISO copyright office \
+CP 401 • Ch. de Blandonnet 8 \
+CH-1214 Vernier, Geneva \
+Phone: +41 22 749 01 11 \
+Fax: +41 22 749 09 47 \
+Email: copyright@iso.org \
+Website: www.iso.org
+:::
+
+:::  {custom-style="Box"}
+Published in Switzerland
 :::
 
 \newpage
