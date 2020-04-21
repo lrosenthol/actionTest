@@ -5,10 +5,6 @@ reference-doc: reference.docx
 
 # table-of-contents: true
 toc-depth: 2
-
-# metadata:
-  # author: Leonard Rosenthol
-  # date: April 16, 2020
     
 filters:
 - WordExtrasFilter.lua

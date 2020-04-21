@@ -810,7 +810,7 @@ end
 
 
 function handleBlocks(block)
-    -- print( 'Found Block: ' ..  block.classes[1])
+    print( 'Found Block: ' ..  block.classes[1])
 
     if FORMAT == "markdown" then  -- Don't change anything if translating to .md
         return
